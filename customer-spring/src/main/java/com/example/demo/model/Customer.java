@@ -1,12 +1,16 @@
 package com.example.demo.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Costumer {
+public class Customer implements Serializable {
+    
+    private static final long serialVersionUID = -3009157732242241606L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,13 +18,14 @@ public class Costumer {
 	private String firstName;
 	private String lastName;
 	
-	public Costumer(String firstName, String lastName) {
+	public Customer(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
-	public Costumer() {
+	public Customer() {
 		
 	}
+	
 	public Long getId() {
 		return id;
 	}
